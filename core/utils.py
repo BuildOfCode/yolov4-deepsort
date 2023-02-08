@@ -158,8 +158,7 @@ def draw_bbox(image, bboxes, info = False, show_label=True, classes=read_class_n
         bbox_color = colors[class_ind]
         bbox_thick = int(0.6 * (image_h + image_w) / 600)
         c1, c2 = (x, y), (x + w, y + h)
-        if w > 600 and h > 600:
-            cv2.rectangle(image, c1, c2, bbox_color, bbox_thick)
+        cv2.rectangle(image, c1, c2, bbox_color, bbox_thick)
 
         if info:
             print("Object found: {}, Confidence: {:.2f}, BBox Coords (xmin, ymin, width, height): {}, {}, {}, {} ".format(class_name, score, x, y, w, h))
